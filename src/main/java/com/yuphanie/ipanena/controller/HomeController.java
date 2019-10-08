@@ -1,4 +1,4 @@
-package com.yuphanie.ipanena;
+package com.yuphanie.ipanena.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
