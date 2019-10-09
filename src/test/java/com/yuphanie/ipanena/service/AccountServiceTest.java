@@ -29,10 +29,8 @@ public class AccountServiceTest {
 
     @Test
     public void shouldCallSaveAccount() {
-        when(accountRepository.save(getDefaultAccount())).thenReturn(getDefaultAccount());
-        assertThat(refEq(accountService.create("username")), is(getDefaultAccount()));
-        verify(accountRepository,times(1)).save(new Account("username"));
-
+        accountService.create("username");
+        verify(accountRepository,times(1)).saveAndFlush(refEq(getDefaultAccount()));
     }
 
     public Account getDefaultAccount() {
