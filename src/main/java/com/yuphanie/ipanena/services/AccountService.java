@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountService {
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     @Autowired
     public AccountService(AccountRepository accountRepository) {
@@ -16,6 +16,7 @@ public class AccountService {
     }
 
     public Account create(String username){
-        return new Account(username);
+        Account account =  accountRepository.save(new Account(username));
+        return account;
     }
 }

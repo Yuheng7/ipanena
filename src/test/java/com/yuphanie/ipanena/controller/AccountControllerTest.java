@@ -1,6 +1,7 @@
 package com.yuphanie.ipanena.controller;
 
 import com.yuphanie.ipanena.model.Account;
+import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.services.AccountService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,6 +26,9 @@ public class AccountControllerTest {
 
     @MockBean
     private AccountService accountService;
+
+    @MockBean
+    private AccountRepository accountRepository;
 
     @Test
     public void shouldLoadAccountPage() throws Exception{
