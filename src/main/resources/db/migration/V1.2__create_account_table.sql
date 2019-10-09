@@ -1,5 +1,5 @@
 CREATE TABLE account (
-    id serial PRIMARY NOT NULL,
-    name CHARACTER VARYING NOT NULL
+    id serial PRIMARY KEY NOT NULL,
+    username CHARACTER VARYING NOT NULL
 );
 

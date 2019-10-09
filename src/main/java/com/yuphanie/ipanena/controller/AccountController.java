@@ -15,7 +15,6 @@ public class AccountController {
 
     @Autowired
     public AccountController(AccountService accountService) {
-        // TODO: LATER
         this.accountService = accountService;
     }
 
