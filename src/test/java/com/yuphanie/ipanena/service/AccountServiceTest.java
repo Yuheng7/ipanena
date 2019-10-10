@@ -2,11 +2,13 @@ package com.yuphanie.ipanena.service;
 
 import com.yuphanie.ipanena.model.Account;
 import com.yuphanie.ipanena.repository.AccountRepository;
+import com.yuphanie.ipanena.repository.CreditCardRepository;
 import com.yuphanie.ipanena.services.AccountService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -21,6 +23,9 @@ public class AccountServiceTest {
 
     @Mock
     private AccountRepository accountRepository;
+
+    @MockBean
+    private CreditCardRepository creditCardRepository;
 
     @Before
     public void setUp() throws Exception{

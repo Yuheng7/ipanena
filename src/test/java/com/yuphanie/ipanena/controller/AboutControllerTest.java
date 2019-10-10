@@ -1,6 +1,7 @@
 package com.yuphanie.ipanena.controller;
 
 import com.yuphanie.ipanena.repository.AccountRepository;
+import com.yuphanie.ipanena.repository.CreditCardRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class AboutControllerTest {
 
     @MockBean
     private AccountRepository accountRepository;
+
+    @MockBean
+    private CreditCardRepository creditCardRepository;
 
     @Test
     public void shouldLoadPage() throws Exception {
