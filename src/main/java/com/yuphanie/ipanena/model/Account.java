@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name="account")
 public class Account {
     private String username;
+    private String email_address;
+    private String password;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +18,9 @@ public class Account {
         return id;
     }
 
-    public void setId(String id) {
+    public Account setId(String id) {
         this.id = id;
+        return this;
     }
 
     public Account(String username) {
@@ -28,7 +31,26 @@ public class Account {
         return username;
     }
 
-    public void setUsername(String username) {
+    public Account setUsername(String username) {
         this.username = username;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Account setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public String getEmail_address() {
+        return email_address;
+    }
+
+    public Account setEmail_address(String email_address) {
+        this.email_address = email_address;
+        return this;
     }
 }

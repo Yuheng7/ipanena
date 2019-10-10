@@ -15,8 +15,8 @@ public class AccountService {
         this.accountRepository = accountRepository;
     }
 
-    public Account create(String username){
-        Account account = accountRepository.saveAndFlush(new Account(username));
+    public Account create(Account account){
+        accountRepository.saveAndFlush(account);
         return account;
     }
 }

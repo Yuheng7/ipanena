@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create</title>
+    <title>Create Account</title>
 </head>
 <body>
-
+<form action="/account/create" method="post" name="account">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="user_name">
+    </div>
+    <div>
+        <label for="password">password:</label>
+        <input type="text" id="password" name="user_password">
+    </div>
+    <div>
+        <label for="email_address">email_address:</label>
+        <input type="text" id="email_address" name="user_email">
+    </div>
+    <button class="CreateAccount" type="submit">Create Account</button>
+</form>
+</body>
+</html>
 </body>
 </html>

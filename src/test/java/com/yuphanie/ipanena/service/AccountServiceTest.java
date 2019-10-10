@@ -29,12 +29,13 @@ public class AccountServiceTest {
 
     @Test
     public void shouldCallSaveAccount() {
-        accountService.create("username");
-        verify(accountRepository,times(1)).saveAndFlush(refEq(getDefaultAccount()));
+        accountService.create(getDefaultAccountWithoutError());
+        verify(accountRepository,times(1)).saveAndFlush(refEq(getDefaultAccountWithoutError()));
     }
 
-    public Account getDefaultAccount() {
-        Account account = new Account("username");
-        return account;
+    public Account getDefaultAccountWithoutError() {
+        return new Account("username")
+                .setEmail_address("email@.com")
+                .setPassword("password");
     }
 }
