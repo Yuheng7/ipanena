@@ -8,4 +8,4 @@ CREATE TABLE account (
 -- //@UNDO
 -- SQL to undo the change goes here.
 
--- DROP TABLE account;
+DROP TABLE account;

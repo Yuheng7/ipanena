@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>Welcome to the Home Page</p>
+
+
+
+<div th:if="${NotLoggedIn}" class="notLoggedIn">
+    <form action="/account/create">
+        <button class="CreateAccount" type="submit">Create Account</button>
+    </form>
+
+    <form action="/login">
+        <button class="Login" type="submit">Login</button>
+    </form>
+</div>
+
+<div th:if="${!NotLoggedIn}" class="LoggedIn">
+    <td th:text= "welcome +  ${username}">
+    </td>
+    <form action="/logout">
+        <button class="LogOut" type="submit">Log Out</button>
+    </form>
+</div>
+
+<!--<form action="/clearAllAccounts">-->
+<!--    <button class="clearAccounts" type="submit">Clear All Accounts (warning this is just for development)</button>-->
+<!--</form>-->
+
+
+<form action="/about">
+    <button class="About" type="submit">About the creators</button>
+</form>
+

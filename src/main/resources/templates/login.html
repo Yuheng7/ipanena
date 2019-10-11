@@ -1,0 +1,16 @@
+
+<p th:if="${loginError}" class="error">Wrong user or password</p>
+    <form action="/login" method="post" name="login">
+        <p>
+            <label>Enter Username</label>
+            <input type="text" id="username" name="username">
+<!--            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+
+        </p>
+        <p>
+            <label>Enter Password</label>
+            <input type="password" id="password" name="password">
+        </p>
+        <button class="Login" type="submit">Login</button>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    </form>

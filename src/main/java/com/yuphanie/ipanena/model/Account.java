@@ -1,5 +1,7 @@
 package com.yuphanie.ipanena.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,11 +10,18 @@ public class Account {
     private String username;
     private String email_address;
     private String password;
+    private Integer enabled;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private String id;
+
+    public Account() {
+    }
+    public Account(String username) {
+        this.username = username;
+    }
 
     public String getId() {
         return id;
@@ -21,10 +30,6 @@ public class Account {
     public Account setId(String id) {
         this.id = id;
         return this;
-    }
-
-    public Account(String username) {
-        this.username = username;
     }
 
     public String getUsername() {
@@ -51,6 +56,15 @@ public class Account {
 
     public Account setEmail_address(String email_address) {
         this.email_address = email_address;
+        return this;
+    }
+
+    public Integer getEnabled() {
+        return enabled;
+    }
+
+    public Account setEnabled(Integer enabled) {
+        this.enabled = enabled;
         return this;
     }
 }

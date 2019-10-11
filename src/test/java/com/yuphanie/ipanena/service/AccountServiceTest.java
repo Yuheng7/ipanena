@@ -38,6 +38,12 @@ public class AccountServiceTest {
         verify(accountRepository,times(1)).saveAndFlush(refEq(getDefaultAccountWithoutError()));
     }
 
+    @Test
+    public void shouldCallGetAccount() {
+        accountService.get("username");
+        verify(accountRepository,times(1)).findByUsername("username");
+    }
+
     public Account getDefaultAccountWithoutError() {
         return new Account("username")
                 .setEmail_address("email@.com")
