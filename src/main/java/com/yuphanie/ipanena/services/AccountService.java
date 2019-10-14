@@ -19,4 +19,8 @@ public class AccountService {
         accountRepository.saveAndFlush(account);
         return account;
     }
+
+    public Account get(String username) {
+        return accountRepository.findByUsername(username);
+    }
 }

@@ -38,7 +38,8 @@ public class AccountController {
     public ModelAndView sendCreateAccountForm(HttpServletRequest request) {
         Account account = new Account(request.getParameter("user_name"))
                 .setEmail_address(request.getParameter("user_email"))
-                .setPassword(request.getParameter("user_password"));
+                .setPassword("{noop}" + request.getParameter("user_password"))
+                .setEnabled(1);
         accountService.create(account);
         ModelAndView model = new ModelAndView("account");
         model.addObject("acc", account);

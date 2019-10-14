@@ -41,6 +41,7 @@ public class AccountControllerTest {
 
     @Test
     public void shouldLoadAccountPage() throws Exception{
+
         mockMvc.perform(get("/account")
                 .accept(MediaType.ALL))
                 .andExpect(status().isOk());
@@ -55,10 +56,12 @@ public class AccountControllerTest {
     public void shouldLoadCreatePageAndCreateAccount() throws Exception{
         HttpServletRequest requestWithoutError = getValidHttpServletRequest();
 
-        accountController.sendCreateAccountForm(requestWithoutError);
         mockMvc.perform(post("/account/create")
                 .accept(MediaType.ALL))
                 .andExpect(status().isOk());
+
+        accountController.sendCreateAccountForm(requestWithoutError);
+
         verify(accountService,times(1))
                 .create(refEq(getDefaultAccountWithoutError()));
     }
@@ -66,7 +69,8 @@ public class AccountControllerTest {
     public Account getDefaultAccountWithoutError() {
         return new Account("username")
                 .setEmail_address("email@.com")
-                .setPassword("password");
+                .setPassword("{noop}password")
+                .setEnabled(1);
     }
 
     private HttpServletRequest getValidHttpServletRequest() {
@@ -81,3 +85,4 @@ public class AccountControllerTest {
         return request;
     }
 }
+
