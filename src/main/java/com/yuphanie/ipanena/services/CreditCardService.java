@@ -4,10 +4,13 @@ import com.yuphanie.ipanena.model.CreditCard;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import java.util.List;
 
 @Service
 public class CreditCardService {
-    private final CreditCardRepository creditCardRepository;
+    private CreditCardRepository creditCardRepository;
 
     @Autowired
     public CreditCardService(CreditCardRepository creditCardRepository) {
@@ -17,5 +20,10 @@ public class CreditCardService {
     public CreditCard addCreditCard(CreditCard creditCard){
         creditCardRepository.save(creditCard);
         return creditCard;
+    }
+
+    @ModelAttribute("creditCards")
+    public List<CreditCard> getCreditCards(){
+        return creditCardRepository.findAll();
     }
 }

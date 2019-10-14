@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Cards</title>
+</head>
+<body>
+<tr th:each="card: ${creditCards} ">
+    <td th:text="${card.bank}"/>
+    <td th:text="${card.card_name}"/>
+</tr>
+
+</body>
+</html>
