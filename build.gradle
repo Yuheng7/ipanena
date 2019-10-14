@@ -23,6 +23,11 @@ task createDB(type: Exec){
 	commandLine './create.sh'
 }
 
+task dropDB(type: Exec){
+	workingDir 'db'
+	commandLine './drop.sh'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
