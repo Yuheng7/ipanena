@@ -1,4 +1,5 @@
 plugins {
+	id 'idea'
 	id 'org.springframework.boot' version '2.1.9.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
@@ -8,13 +9,13 @@ group = 'com.yuphanie'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
-//sourceSets {
-//	functionalTest {
-//		compileClasspath += main.output + test.output
-//		runtimeClasspath += main.output + test.output
-//	}
-//}
-//
+sourceSets {
+	functionalTest {
+		compileClasspath += main.output + test.output
+		runtimeClasspath += main.output + test.output
+	}
+}
+
 //apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
 //
 //
@@ -29,8 +30,8 @@ configurations {
 	runtimeClasspath {
 		extendsFrom developmentOnly
 	}
-//	functionalTestCompile.extendsFrom testCompile
-//	functionalTestRuntime.extendsFrom testRuntime
+	functionalTestCompile.extendsFrom testCompile
+	functionalTestRuntime.extendsFrom testRuntime
 }
 repositories {
 	mavenCentral()
@@ -46,15 +47,15 @@ task dropDB(type: Exec){
 	commandLine './drop.sh'
 }
 
-//task installChromeDriver(type: Exec) {
-//	commandLine './chromedriver.sh'
-//}
+task installChromeDriver(type: Exec) {
+	commandLine './chromedriver.sh'
+}
 
-//task functionalTest(type: Test) {
-//	testClassesDirs = sourceSets.functionalTest.output.classesDirs
-//	classpath = sourceSets.functionalTest.runtimeClasspath + sourceSets.main.runtimeClasspath
-//	reports.junitXml.destination file("$reports.junitXml.destination/functional")
-//}
+task functionalTest(type: Test) {
+	testClassesDirs = sourceSets.functionalTest.output.classesDirs
+	classpath = sourceSets.functionalTest.runtimeClasspath + sourceSets.main.runtimeClasspath
+	reports.junitXml.destination file("$reports.junitXml.destination/functional")
+}
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -69,6 +70,13 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
-//	functionalTestCompile 'org.seleniumhq.selenium:selenium-java:3.8.1'
-//	functionalTestCompile 'com.codeborne:phantomjsdriver:1.4.3'
+	functionalTestCompile 'org.seleniumhq.selenium:selenium-java:3.8.1'
+	functionalTestCompile 'com.codeborne:phantomjsdriver:1.4.3'
+}
+
+idea {
+	module {
+		testSourceDirs += file('src/functionalTest/java')
+		testSourceDirs += file('src/functionalTest/resources')
+	}
 }
