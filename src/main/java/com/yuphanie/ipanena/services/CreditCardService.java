@@ -17,12 +17,6 @@ public class CreditCardService {
         this.creditCardRepository = creditCardRepository;
     }
 
-    public CreditCard addCreditCard(CreditCard creditCard){
-        creditCardRepository.save(creditCard);
-        return creditCard;
-    }
-
-    @ModelAttribute("creditCards")
     public List<CreditCard> getCreditCards(){
         return creditCardRepository.findAll();
     }

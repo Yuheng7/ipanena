@@ -23,11 +23,7 @@ public class CardController {
     @GetMapping
     public ModelAndView showCreditCards(){
         ModelAndView model = new ModelAndView("cards");
-        List<CreditCard> cards = creditCardService.getCreditCards();
-        for(CreditCard card: cards){
-            System.out.println(card.getBank());
-        }
-        model.addObject("creditCards", cards);
+        model.addObject("creditCards", creditCardService.getCreditCards());
         return model;
     }
 }
