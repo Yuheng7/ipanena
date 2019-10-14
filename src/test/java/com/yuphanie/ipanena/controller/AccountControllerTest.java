@@ -56,10 +56,9 @@ public class AccountControllerTest {
     public void shouldLoadCreatePageAndCreateAccount() throws Exception{
         HttpServletRequest requestWithoutError = getValidHttpServletRequest();
 
-        mockMvc.perform(post("/account/create")
+        mockMvc.perform(get("/account/create")
                 .accept(MediaType.ALL))
                 .andExpect(status().isOk());
-
         accountController.sendCreateAccountForm(requestWithoutError);
 
         verify(accountService,times(1))

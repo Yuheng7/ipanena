@@ -5,6 +5,12 @@
     <title>Create Account</title>
 </head>
 <body>
+<!--<c:if test="${not empty validationMessage.errors}">-->
+<!--    <div id="resultsMessage" class="page-action error">-->
+<!--        There were errors. Please check your input.-->
+<!--    </div>-->
+<!--</c:if>-->
+
 <form action="/account/create" method="post" name="account">
     <div>
         <label for="username">Username:</label>
