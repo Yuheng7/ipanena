@@ -29,11 +29,6 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @GetMapping
-    public String getAccount(){
-        return "account";
-    }
-
     @GetMapping("/create")
     public ModelAndView showCreateAccountForm() {
         return new ModelAndView("create");

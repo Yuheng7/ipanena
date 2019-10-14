@@ -39,14 +39,6 @@ public class AccountControllerTest {
     @MockBean
     private AccountRepository accountRepository;
 
-    @Test
-    public void shouldLoadAccountPage() throws Exception{
-
-        mockMvc.perform(get("/account")
-                .accept(MediaType.ALL))
-                .andExpect(status().isOk());
-    }
-
     @Before
     public void setUp(){
         accountController = new AccountController(accountService);
