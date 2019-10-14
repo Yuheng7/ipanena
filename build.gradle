@@ -20,8 +20,8 @@ sourceSets {
 //
 //
 //gretty {
-//	contextPath = '/src/'
-//	integrationTestTask = 'functionalTest'
+//	contextPath = '/'
+////	integrationTestTask = 'functionalTest'
 //	servletContainer = 'jetty9.4'
 //}
 
@@ -66,6 +66,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.flywaydb:flyway-core'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
 	runtimeOnly 'org.postgresql:postgresql'
 	testCompile 'junit:junit:4.12'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
