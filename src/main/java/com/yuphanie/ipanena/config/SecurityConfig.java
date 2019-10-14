@@ -28,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //when authentication is required, the next two lines REDIRECTS user to login page
                 .formLogin()
                 .loginPage("/login").failureUrl("/login-error")
+                // can change it to false if we want to set up custom redirect url i feel
                 .defaultSuccessUrl("/", true)
                 .usernameParameter("username").passwordParameter("password")
                 .and()
@@ -46,7 +47,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSourceConfig.getDataSource());
+        auth.jdbcAuthentication().dataSource(dataSourceConfig.getDataSource())
+        .usersByUsernameQuery(
+                "SELECT username, password, enabled FROM account WHERE username=?");
+//        .authoritiesByUsernameQuery(
+//                "SELECT username, 'ROLE_USER' FROM users WHERE username=?");
     }
 
     //High key think this is all that's needed to encode passwords

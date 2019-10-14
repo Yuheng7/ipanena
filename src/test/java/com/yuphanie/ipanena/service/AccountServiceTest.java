@@ -13,8 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import static org.mockito.Mockito.*;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.CoreMatchers.*;
 
 @RunWith(SpringRunner.class)
 public class AccountServiceTest {
@@ -36,6 +34,7 @@ public class AccountServiceTest {
     public void shouldCallSaveAccount() {
         accountService.create(getDefaultAccountWithoutError());
         verify(accountRepository,times(1)).saveAndFlush(refEq(getDefaultAccountWithoutError()));
+        verify(accountRepository,times(1)).insertIntoAuthoritiesTable("username", "ROLE_USER");
     }
 
     @Test
