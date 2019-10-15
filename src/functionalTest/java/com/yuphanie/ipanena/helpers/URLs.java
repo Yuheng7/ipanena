@@ -16,4 +16,8 @@ public class URLs{
         return BASE + "/logout";
     }
 
+    public static String about() {
+        return BASE + "/about";
+    }
+
 }

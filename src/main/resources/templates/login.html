@@ -11,6 +11,9 @@
             <label>Enter Password</label>
             <input type="password" id="password" name="password">
         </p>
-        <button class="Login" type="submit">Login</button>
+        <button class="Login" type="submit" name="login">Login</button>
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form>
+<form action="/account/create">
+    <button class="CreateAccount" type="submit">Create Account</button>
+</form>

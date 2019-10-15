@@ -19,7 +19,7 @@
     </form>
 </div>
 
-<div th:if="${!NotLoggedIn}" class="LoggedIn">
+<div th:if="${!NotLoggedIn}" class="LoggedIn" id="LoggedIn">
     <td th:text= "welcome +  ${username}">
     </td>
     <form action="/logout">
