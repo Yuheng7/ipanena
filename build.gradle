@@ -42,10 +42,10 @@ task createDB(type: Exec){
 	commandLine './create.sh'
 }
 
-task dropDB(type: Exec){
-	workingDir 'db'
-	commandLine './drop.sh'
-}
+//task dropDB(type: Exec){
+//	workingDir 'db'
+//	commandLine './drop.sh'
+//}
 
 task installChromeDriver(type: Exec) {
 	commandLine './chromedriver.sh'
