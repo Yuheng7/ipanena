@@ -2,6 +2,7 @@ package com.yuphanie.ipanena.controller;
 
 import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
+import com.yuphanie.ipanena.repository.RewardRepository;
 import com.yuphanie.ipanena.services.CreditCardService;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,6 +38,9 @@ public class CardControllerTest {
 
     @MockBean
     private AccountRepository accountRepository;
+
+    @MockBean
+    private RewardRepository rewardRepository;
 
     @Before
     public void setUp(){

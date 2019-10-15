@@ -10,8 +10,6 @@ public class UserApi {
     public UserApi(WebDriver driver) {
             this.driver = driver;
             this.mainPageWindowHandle = driver.getWindowHandle();
-
-
         }
 
     public UserApi visits_home_page() {

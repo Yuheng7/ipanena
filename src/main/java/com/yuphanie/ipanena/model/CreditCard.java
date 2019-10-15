@@ -1,7 +1,6 @@
 package com.yuphanie.ipanena.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "credit_card")
