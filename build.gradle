@@ -21,7 +21,7 @@ sourceSets {
 //
 //gretty {
 //	contextPath = '/'
-////	integrationTestTask = 'functionalTest'
+//	integrationTestTask = 'functionalTest'
 //	servletContainer = 'jetty9.4'
 //}
 
