@@ -1,9 +1,11 @@
 package com.yuphanie.ipanena.controller;
 
 import com.yuphanie.ipanena.model.Account;
+import com.yuphanie.ipanena.model.SignOnBonus;
 import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
 import com.yuphanie.ipanena.repository.RewardRepository;
+import com.yuphanie.ipanena.repository.SignOnBonusRepository;
 import com.yuphanie.ipanena.services.AccountService;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +44,9 @@ public class AccountControllerTest {
 
     @MockBean
     private RewardRepository rewardRepository;
+
+    @MockBean
+    private SignOnBonusRepository signOnBonusRepository;
 
     @Before
     public void setUp(){

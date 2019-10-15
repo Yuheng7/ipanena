@@ -1,8 +1,10 @@
 package com.yuphanie.ipanena.service;
 
+import com.yuphanie.ipanena.model.SignOnBonus;
 import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
 import com.yuphanie.ipanena.repository.RewardRepository;
+import com.yuphanie.ipanena.repository.SignOnBonusRepository;
 import com.yuphanie.ipanena.services.CreditCardService;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,6 +28,9 @@ public class CreditCardServiceTest {
 
     @MockBean
     private RewardRepository rewardRepository;
+
+    @MockBean
+    private SignOnBonusRepository signOnBonusRepository;
 
     @Before
     public void setUp() throws Exception{

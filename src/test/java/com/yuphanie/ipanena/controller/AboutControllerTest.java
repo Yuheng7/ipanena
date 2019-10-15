@@ -1,8 +1,10 @@
 package com.yuphanie.ipanena.controller;
 
+import com.yuphanie.ipanena.model.SignOnBonus;
 import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
 import com.yuphanie.ipanena.repository.RewardRepository;
+import com.yuphanie.ipanena.repository.SignOnBonusRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,9 @@ public class AboutControllerTest {
 
     @MockBean
     private RewardRepository rewardRepository;
+
+    @MockBean
+    private SignOnBonusRepository signOnBonusRepository;
 
     @Test
     public void shouldLoadPage() throws Exception {

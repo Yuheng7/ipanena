@@ -3,32 +3,16 @@ package com.yuphanie.ipanena.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="reward")
-public class Reward {
+@Table(name="sign_on_bonus")
+public class SignOnBonus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private Long id;
     private String card_name;
-    private String amount;
-    private String category;
-
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    private String spending;
+    private String earned;
 
     public Long getId() {
         return id;
@@ -46,4 +30,19 @@ public class Reward {
         this.card_name = card_name;
     }
 
+    public String getSpending() {
+        return spending;
+    }
+
+    public void setSpending(String spending) {
+        this.spending = spending;
+    }
+
+    public String getEarned() {
+        return earned;
+    }
+
+    public void setEarned(String earned) {
+        this.earned = earned;
+    }
 }
