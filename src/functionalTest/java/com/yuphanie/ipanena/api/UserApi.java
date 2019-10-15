@@ -11,4 +11,9 @@ public class UserApi {
             this.driver = driver;
             this.mainPageWindowHandle = driver.getWindowHandle();
         }
+
+    public UserApi visits_home_page() {
+        driver.get("localhost:8080/");
+        return this;
+    }
 }

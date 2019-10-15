@@ -14,8 +14,8 @@ public class ScreenApi {
         this.driver = driver;
     }
 
-    public ScreenApi shows_login() {
-        assertThat(driver.getCurrentUrl(), is(URLs.login()));
+    public ScreenApi shows_home_page() {
+        assertThat(driver.getCurrentUrl(), is(URLs.home()));
         return this;
     }
 }

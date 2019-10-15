@@ -6,7 +6,10 @@ public class UserJourneyTest extends UserJourneySetUp {
 
     @Test
     public void shouldLoadHomePage() {
+
+        user
+                .visits_home_page();
         screen
-                .shows_login();
+                .shows_home_page();
     }
 }
