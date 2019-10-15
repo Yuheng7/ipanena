@@ -15,7 +15,7 @@
     </form>
 
     <form action="/login">
-        <button class="Login" type="submit">Login</button>
+        <button class="Login" type="submit" name=login">Login</button>
     </form>
 </div>
 
@@ -23,7 +23,7 @@
     <td th:text= "welcome +  ${username}">
     </td>
     <form action="/logout">
-        <button class="LogOut" type="submit">Log Out</button>
+        <button class="LogOut" type="submit" name="logout">Log Out</button>
     </form>
 </div>
 
