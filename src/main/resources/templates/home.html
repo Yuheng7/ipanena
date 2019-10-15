@@ -10,20 +10,20 @@
 
 
 <div th:if="${NotLoggedIn}" class="notLoggedIn">
-    <form action="/account/create">
-        <button class="CreateAccount" type="submit">Create Account</button>
+    <form action="/account/create" name="create">
+        <button class="CreateAccount" type="submit" name="create">Create Account</button>
     </form>
 
-    <form action="/login">
-        <button class="Login" type="submit">Login</button>
+    <form action="/login" name="login">
+        <button class="Login" type="submit" name="login">Login</button>
     </form>
 </div>
 
-<div th:if="${!NotLoggedIn}" class="LoggedIn" id="LoggedIn">
+<div th:if="${!NotLoggedIn}" class="LoggedIn">
     <td th:text= "welcome +  ${username}">
     </td>
-    <form action="/logout">
-        <button class="LogOut" type="submit">Log Out</button>
+    <form action="/logout" name="logout">
+        <button class="LogOut" type="submit" name="logout">Log Out</button>
     </form>
 </div>
 
@@ -32,11 +32,11 @@
 <!--</form>-->
 
 
-<form action="/about">
-    <button class="About" type="submit">About the creators</button>
+<form action="/about" name="about">
+    <button class="About" type="submit" name="about">About the creators</button>
 </form>
 
-<form action="/cards">
-    <button class="Cards" type="submit">View Credit Cards</button>
+<form action="/cards"name="cards">
+    <button class="Cards" type="submit" name="cards">View Credit Cards</button>
 </form>
 

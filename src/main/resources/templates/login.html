@@ -1,5 +1,5 @@
 
-<p th:if="${loginError}" class="error">Wrong user or password</p>
+<p th:if="${loginError}" class="error" name="errorLogin">Wrong user or password</p>
     <form action="/login" method="post" name="login">
         <p>
             <label>Enter Username</label>

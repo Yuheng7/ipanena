@@ -32,13 +32,17 @@ public class ScreenApi {
     }
 
     public ScreenApi shows_home_logged_out() {
-        assertThat(driver.findElement(By.id("login")).getText(), containsString("Login"));
+        assertThat(driver.findElement(By.name("login")).getText(), containsString("Login"));
         return this;
     }
     public ScreenApi shows_home_logged_in() {
-        assertThat(driver.findElement(By.id("LoggedIn")).isDisplayed(), is(true));
+        assertThat(driver.findElement(By.name("logout")).getText(), containsString("Log out"));
+        return this;
+    }
 
-//        assertThat(driver.findElement(By.name("logout")).getText(), containsString("Log out"));
+    public ScreenApi shows_login_page_error() {
+        assertThat(driver.getCurrentUrl(), is(URLs.loginError()));
+//        assertThat(driver.findElement(By.name("errorLogin")).isDisplayed(), is(true));
         return this;
     }
 }

@@ -20,4 +20,7 @@ public class URLs{
         return BASE + "/about";
     }
 
+    public static String loginError() {
+        return BASE + "/login-error";
+    }
 }
