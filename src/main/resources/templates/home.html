@@ -15,15 +15,15 @@
     </form>
 
     <form action="/login">
-        <button class="Login" type="submit" name=login">Login</button>
+        <button class="Login" type="submit">Login</button>
     </form>
 </div>
 
-<div th:if="${!NotLoggedIn}" class="LoggedIn">
+<div th:if="${!NotLoggedIn}" class="LoggedIn" id="LoggedIn">
     <td th:text= "welcome +  ${username}">
     </td>
     <form action="/logout">
-        <button class="LogOut" type="submit" name="logout">Log Out</button>
+        <button class="LogOut" type="submit">Log Out</button>
     </form>
 </div>
 
