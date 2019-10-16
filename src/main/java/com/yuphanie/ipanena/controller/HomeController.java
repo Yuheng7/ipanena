@@ -11,8 +11,6 @@ import java.security.Principal;
 @Controller
 public class HomeController {
 
-    @Autowired
-    AccountRepository accountRepository;
 
     @RequestMapping("/")
     public String getHomePage(Model model, Principal principal){
@@ -23,10 +21,4 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping("/clearAllAccounts")
-    public String clearAccounts() {
-        accountRepository.deleteAll();
-        accountRepository.flush();
-        return "home";
-    }
 }

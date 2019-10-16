@@ -29,4 +29,9 @@ public class AccountService {
     }
 
 
+    public void delete(String user_name) {
+        Account account = accountRepository.findByUsername(user_name);
+        accountRepository.deleteFromAuthoritiesTable(user_name);
+        accountRepository.deleteById(account.getId());
+    }
 }

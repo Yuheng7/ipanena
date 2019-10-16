@@ -27,9 +27,13 @@
     </form>
 </div>
 
-<!--<form action="/clearAllAccounts">-->
-<!--    <button class="clearAccounts" type="submit">Clear All Accounts (warning this is just for development)</button>-->
-<!--</form>-->
+<form action="/account/delete" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="user_name">
+    </div>
+    <button class="deleteAccount" type="submit">Clear All Accounts (warning this is just for development)</button>
+</form>
 
 
 <form action="/about" name="about">

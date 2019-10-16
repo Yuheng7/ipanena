@@ -66,6 +66,15 @@ public class AccountControllerTest {
                 .create(refEq(getDefaultAccountWithoutError()));
     }
 
+    @Test
+    public void shouldCallDeleteInAccountService() throws Exception{
+        HttpServletRequest request = mock(HttpServletRequest.class);
+        when(request.getParameter("user_name")).thenReturn("username");
+        accountController.deleteAccount(request);
+        verify(accountService,times(1))
+                .delete("username");
+    }
+
     public Account getDefaultAccountWithoutError() {
         return new Account("username")
                 .setEmail_address("email@.com")

@@ -32,17 +32,36 @@ public class ScreenApi {
     }
 
     public ScreenApi shows_home_logged_out() {
-        assertThat(driver.findElement(By.name("login")).getText(), containsString("Login"));
+        assertThat(driver.findElement(By.className("Login")).getText(), is("Login"));
         return this;
     }
     public ScreenApi shows_home_logged_in() {
-        assertThat(driver.findElement(By.name("logout")).getText(), containsString("Log out"));
+        assertThat(driver.findElement(By.className("LogOut")).getText(), is("Log Out"));
         return this;
     }
 
     public ScreenApi shows_login_page_error() {
         assertThat(driver.getCurrentUrl(), is(URLs.loginError()));
-//        assertThat(driver.findElement(By.name("errorLogin")).isDisplayed(), is(true));
+        return this;
+    }
+
+    public ScreenApi shows_create_account_page() {
+        assertThat(driver.getCurrentUrl(), containsString(URLs.createAccount()));
+        return this;
+    }
+
+    public ScreenApi shows_create_account_error_page() {
+        assertThat(driver.getPageSource(), containsString("error"));
+        return this;
+    }
+
+    public ScreenApi shows_create_account_success() {
+        assertThat(driver.getPageSource(), containsString("account has been created"));
+        return this;
+    }
+
+    public ScreenApi shows_credit_card_page() {
+        assertThat(driver.getCurrentUrl(), containsString("cards"));
         return this;
     }
 }

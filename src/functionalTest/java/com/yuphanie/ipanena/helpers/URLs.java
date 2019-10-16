@@ -23,4 +23,16 @@ public class URLs{
     public static String loginError() {
         return BASE + "/login-error";
     }
+
+    public static String createAccount() {
+        return BASE + "/account/create";
+    }
+
+    public static String createAccountFailure() {
+        return BASE + "/account/createFailure";
+    }
+
+    public static String creditCards() {
+        return BASE + "/cards";
+    }
 }

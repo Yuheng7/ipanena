@@ -15,7 +15,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
-    private String id;
+    private Long id;
 
     public Account() {
     }
@@ -23,11 +23,11 @@ public class Account {
         this.username = username;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public Account setId(String id) {
+    public Account setId(Long id) {
         this.id = id;
         return this;
     }
