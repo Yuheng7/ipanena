@@ -71,12 +71,16 @@ public class UserApi {
     }
 
     public UserApi deletes_made_account(String userName) {
-        driver.get(URLs.home());
-        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.name("user_name")));
-        driver.findElement(By.name("user_name")).sendKeys(userName);
-        driver.findElement(By.className("deleteAccount")).click();
+        try {
+            driver.get(URLs.home());
+            new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.name("user_name")));
+            driver.findElement(By.name("user_name")).sendKeys(userName);
+            driver.findElement(By.className("deleteAccount")).click();
 
-        return this;
+            return this;
+        } catch (Exception e) {
+            return this;
+        }
     }
 
     public UserApi visits_credit_card_page() {

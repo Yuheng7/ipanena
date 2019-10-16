@@ -14,6 +14,7 @@ public class UserJourneyTest extends UserJourneySetUp {
     @Test
     public void userJourney() {
 
+        clean_start_up();
         visitAllNonLoginPages();
 
         user
@@ -24,6 +25,9 @@ public class UserJourneyTest extends UserJourneySetUp {
                 .clicks_create_account();
         screen
                 .shows_create_account_page();
+
+        errorCheckingCreateAccount();
+
         user
                 .creates_account(SOME_NAME, SOME_PASSWORD, SOME_EMAIL);
         screen
@@ -38,7 +42,7 @@ public class UserJourneyTest extends UserJourneySetUp {
                 .logs_out();
         screen
                 .shows_home_logged_out();
-        cleanup();
+        clean_start_up();
     }
 
     private void visitAllNonLoginPages() {
@@ -68,17 +72,17 @@ public class UserJourneyTest extends UserJourneySetUp {
         //also don't know why it goes to account/create and not account/createFailure
         screen
                 .shows_create_account_error_page();
-        user
-                .creates_account(SOME_NAME, EMPTY_STRING, SOME_EMAIL);
-        screen
-                .shows_create_account_error_page();
+//        user
+//                .creates_account(SOME_NAME, EMPTY_STRING, SOME_EMAIL);
+//        screen
+//                .shows_create_account_error_page();
         user
                 .creates_account(SOME_NAME, SOME_PASSWORD, EMPTY_STRING);
         screen
                 .shows_create_account_error_page();
     }
 
-    private void cleanup() {
+    private void clean_start_up() {
         user
                 .deletes_made_account(SOME_NAME);
     }

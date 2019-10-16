@@ -60,7 +60,7 @@ public class AccountController {
                 .setPassword("{noop}" + request.getParameter("user_password"))
                 .setEnabled(1);
 
-        HashMap errors = verifyInputs(account);
+        HashMap errors = verifyInputs(account, accountService);
         if(!errors.isEmpty()) {
             return showErrors(errors);
         }
