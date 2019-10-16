@@ -4,9 +4,8 @@ package com.yuphanie.ipanena.helpers;
 public class SyntaxSugar {
 
     public static final String EMPTY_STRING = "";
-//    public static final String SOME_NAME = "user";
-//    public static final String SOME_PASSWORD = "$2a$10$8.UnVuG9HHgffUDAlk8qfOuVGkqRzgVymGe07xd00DMxs.AQubh4a";
-//    public static final String SOME_EMAIL = "user@gmail.com";
+    public static final String EXISTING_NAME = "user";
+    public static final String EXISTING_EMAIL = "user@gmail.com";
 
     public static final String SOME_NAME = "user_tester";
     public static final String SOME_PASSWORD = "password_tester";

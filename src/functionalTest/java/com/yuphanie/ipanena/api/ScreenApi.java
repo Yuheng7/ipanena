@@ -36,6 +36,7 @@ public class ScreenApi {
         return this;
     }
     public ScreenApi shows_home_logged_in() {
+        driver.get(URLs.home());
         assertThat(driver.findElement(By.className("LogOut")).getText(), is("Log Out"));
         return this;
     }

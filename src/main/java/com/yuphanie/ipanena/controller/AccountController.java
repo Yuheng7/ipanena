@@ -4,7 +4,6 @@ import com.yuphanie.ipanena.model.Account;
 import com.yuphanie.ipanena.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -56,7 +55,7 @@ public class AccountController {
     @PostMapping("/create")
     public ModelAndView sendCreateAccountForm(HttpServletRequest request) {
         Account account = new Account(request.getParameter("user_name"))
-                .setEmail_address(request.getParameter("user_email"))
+                .setEmailAddress(request.getParameter("user_email"))
                 .setPassword("{noop}" + request.getParameter("user_password"))
                 .setEnabled(1);
 

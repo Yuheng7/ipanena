@@ -1,14 +1,14 @@
 package com.yuphanie.ipanena.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name="account")
 public class Account {
     private String username;
-    private String email_address;
+
+    @Column(name = "email_address", nullable = false)
+    private String emailAddress;
     private String password;
     private Integer enabled;
 
@@ -50,12 +50,12 @@ public class Account {
         return this;
     }
 
-    public String getEmail_address() {
-        return email_address;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public Account setEmail_address(String email_address) {
-        this.email_address = email_address;
+    public Account setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
         return this;
     }
 

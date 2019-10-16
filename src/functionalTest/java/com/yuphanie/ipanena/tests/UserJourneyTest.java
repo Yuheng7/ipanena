@@ -34,8 +34,6 @@ public class UserJourneyTest extends UserJourneySetUp {
                 .shows_create_account_success();
         user
                 .logs_in_with(SOME_NAME, SOME_PASSWORD);
-        user
-                .visits_home_page();
         screen
                 .shows_home_logged_in();
         user
@@ -72,12 +70,20 @@ public class UserJourneyTest extends UserJourneySetUp {
         //also don't know why it goes to account/create and not account/createFailure
         screen
                 .shows_create_account_error_page();
-//        user
-//                .creates_account(SOME_NAME, EMPTY_STRING, SOME_EMAIL);
-//        screen
-//                .shows_create_account_error_page();
+        user
+                .creates_account(SOME_NAME, EMPTY_STRING, SOME_EMAIL);
+        screen
+                .shows_create_account_error_page();
         user
                 .creates_account(SOME_NAME, SOME_PASSWORD, EMPTY_STRING);
+        screen
+                .shows_create_account_error_page();
+        user
+                .creates_account(EXISTING_NAME, SOME_PASSWORD, SOME_EMAIL);
+        screen
+                .shows_create_account_error_page();
+        user
+                .creates_account(SOME_NAME, SOME_PASSWORD, EXISTING_EMAIL);
         screen
                 .shows_create_account_error_page();
     }

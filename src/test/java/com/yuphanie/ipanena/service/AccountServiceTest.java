@@ -1,7 +1,6 @@
 package com.yuphanie.ipanena.service;
 
 import com.yuphanie.ipanena.model.Account;
-import com.yuphanie.ipanena.model.SignOnBonus;
 import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
 import com.yuphanie.ipanena.repository.RewardRepository;
@@ -48,13 +47,13 @@ public class AccountServiceTest {
 
     @Test
     public void shouldCallGetAccount() {
-        accountService.get("username");
+        accountService.getByUsername("username");
         verify(accountRepository,times(1)).findByUsername("username");
     }
 
     public Account getDefaultAccountWithoutError() {
         return new Account("username")
-                .setEmail_address("email@.com")
+                .setEmailAddress("email@.com")
                 .setPassword("password");
     }
 }

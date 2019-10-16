@@ -9,13 +9,13 @@ public class CreateAccountValidator {
     public static HashMap verifyInputs(Account account, AccountService accountService) {
         HashMap errors = new HashMap();
 
-        if (!account.getEmail_address().contains("@")) {
+        if (!account.getEmailAddress().contains("@")) {
             errors.put("email", "Must enter a valid email!");
         }
 
-//        if (!account.getEmail_address().contains("@")) {
-//            errors.put("email", "Must enter a valid email!");
-//        }
+        if (accountService.getByEmail(account.getEmailAddress()) != null) {
+            errors.put("email", "email is already taken");
+        }
 
         if(account.getPassword().length() < 7) {
             errors.put("password", "Must enter a password!");
@@ -25,7 +25,7 @@ public class CreateAccountValidator {
             errors.put("name", "Must enter a name!");
         }
 
-        if(accountService.get(account.getUsername()) != null) {
+        if(accountService.getByUsername(account.getUsername()) != null) {
             errors.put("name_taken", "username already taken");
         }
 

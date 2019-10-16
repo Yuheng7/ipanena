@@ -1,7 +1,6 @@
 package com.yuphanie.ipanena.controller;
 
 import com.yuphanie.ipanena.model.Account;
-import com.yuphanie.ipanena.model.SignOnBonus;
 import com.yuphanie.ipanena.repository.AccountRepository;
 import com.yuphanie.ipanena.repository.CreditCardRepository;
 import com.yuphanie.ipanena.repository.RewardRepository;
@@ -77,7 +76,7 @@ public class AccountControllerTest {
 
     public Account getDefaultAccountWithoutError() {
         return new Account("username")
-                .setEmail_address("email@.com")
+                .setEmailAddress("email@.com")
                 .setPassword("{noop}password")
                 .setEnabled(1);
     }
