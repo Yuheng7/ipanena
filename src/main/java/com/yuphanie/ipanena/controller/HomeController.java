@@ -19,6 +19,7 @@ public class HomeController {
             model.addAttribute("username", principal.getName());
         }
         return "home";
+//        return "index.html";
     }
 
 }
