@@ -13,11 +13,14 @@ const Home = () => (
 class Main extends Component{
     render(){
         return(
+            <div>
             <Switch>
                 <Route exact path='/' component={Home}></Route>
                 <Route exact path='/about' component={About}></Route>
                 <Route exact path='/cards' component={Cards}></Route>
+                <Route exact path='/login' component={About}></Route>
             </Switch>
+            </div>
         )
     }
 }

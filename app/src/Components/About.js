@@ -7,9 +7,9 @@ class About extends Component{
     render() {
         return (
             <div className="container">
-                <hi>About the creators</hi>
-                <img src={Yuheng} />
-                <img src={Stephanie} className="Steph"/>
+                <h1>About the creators</h1>
+                <img onMouseOver={() => console.log("Yuheng")} src={Yuheng} />
+                <img onMouseOver={() => console.log("Stephanie")} src={Stephanie} className="Steph"/>
             </div>
         )
     }
